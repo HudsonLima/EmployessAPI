@@ -11,7 +11,7 @@ The project is online at azure platform by the URL:
 http://hlemployeesapi.azurewebsites.net
 ```
 
-## Usefull
+## Useful
 
 ### I'm using Swagger in the project. But what is Swagger?
 
