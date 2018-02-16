@@ -11,12 +11,24 @@ namespace EmployessAPI.EFModel
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class employee
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "The Name is required", AllowEmptyStrings = false)]
+        [StringLength(50, ErrorMessage = "The maximum length for Name is {1} characters.")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "The Email is required", AllowEmptyStrings = false)]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Please enter a valid email address")]
+        [StringLength(50, ErrorMessage = "The maximum length for Email is {1} characters.")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "The Department is required", AllowEmptyStrings = false)]
+        [StringLength(50, ErrorMessage = "The maximum length for Department is {1} characters.")]
         public string Department { get; set; }
     }
 }
